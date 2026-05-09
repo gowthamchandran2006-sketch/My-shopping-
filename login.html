@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login - My shopping</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1556740749-887f6717d7e4');
+    background-size:cover;
+    background-position:center;
+}
+
+.login-container{
+    width:90%;
+    max-width:420px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.logo i{
+    font-size:60px;
+    color:#00c8f0;
+}
+
+.logo h1{
+    color:#07122b;
+    margin-top:10px;
+    font-size:40px;
+}
+
+.login-container h2{
+    text-align:center;
+    color:#07122b;
+    margin-bottom:30px;
+    font-size:32px;
+}
+
+.input-box{
+    margin-bottom:20px;
+}
+
+.input-box label{
+    display:block;
+    margin-bottom:8px;
+    color:#07122b;
+    font-weight:bold;
+}
+
+.input-box input{
+    width:100%;
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    outline:none;
+    font-size:16px;
+}
+
+.input-box input:focus{
+    border-color:#00c8f0;
+}
+.login-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#07122b;
+    color:white;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-btn:hover{
+    background:#00c8f0;
+}
+
+.extra-links{
+    text-align:center;
+    margin-top:20px;
+}
+
+.extra-links a{
+    text-decoration:none;
+    color:#00c8f0;
+    font-weight:bold;
+}
+
+.extra-links p{
+    margin-top:10px;
+    color:#555;
+}
+
+.message{
+    text-align:center;
+    margin-top:15px;
+    font-size:16px;
+    color:green;
+    display:none;
+}
+
+@media(max-width:768px){
+
+    .login-container{
+        padding:30px 20px;
+    }
+
+    .logo h1{
+        font-size:32px;
+    }
+
+    .login-container h2{
+        font-size:28px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+<div class="logo">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<h1>
+My shopping 
+</h1>
+
+</div>
+
+<h2>
+Login Account
+</h2>
+
+<form id="loginForm">
+
+<div class="input-box">
+
+<label>Email Address</label>
+
+<input 
+type="email"
+id="email"
+placeholder="Enter your email"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Password</label>
+
+<input 
+type="password"
+id="password"
+placeholder="Enter your password"
+required>
+
+</div>
+
+<button type="submit" class="login-btn">
+
+Login
+
+</button>
+
+<div class="message" id="successMessage">
+
+✅ Login Successful Redirecting...
+
+</div>
+
+</form>
+
+<div class="extra-links">
+
+<a href="#">
+Forgot Password?
+</a>
+
+<p>
+Don't have an account?
+<a href="register.html">
+Register
+</a>
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+const loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if(email !== "" && password !== ""){
+
+        document.getElementById("successMessage").style.display = "block";
+
+        setTimeout(() => {
+
+            window.location.href = "index.html";
+
+        }, 2000);
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>
